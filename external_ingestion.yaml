@@ -1,0 +1,68 @@
+agronex:
+  description: Ingest data from AGRONEX API to Datalake
+  dag_retries: 5
+  retry_delay: 30
+  schedule_interval: "0 0 * * 0"
+  start_date: 2021-10-30 00:00:00.000000
+  max_active_runs: 1
+  catchup: False
+
+  task_default_params:
+    endpoint: agronex_ingestion
+    execution_timeout: 600 # Exemplo de timeout de 600 segundos (10 minutos)
+
+  tasks:
+    - task_id: goodday
+    - task_id: macroindicator
+    - task_id: gooddaytask
+    - task_id: indleaderroute
+    - task_id: liderroute
+    - task_id: indleaderroutevalue
+    - task_id: registrations
+    - task_id: checklists
+    - task_id: criticalities
+    - task_id: levelsubareas
+    - task_id: macroindicators
+    - task_id: macroprocesses
+    - task_id: operationalkpis
+    - task_id: origensinfos
+    - task_id: pillars
+    - task_id: processes
+    - task_id: questions
+    - task_id: responsibles
+    - task_id: routes
+    - task_id: shifts
+    - task_id: status
+    - task_id: subareas
+    - task_id: subroutes
+    - task_id: typenotes
+    - task_id: units
+    - task_id: satisfaction
+    - task_id: shiftchanges
+    - task_id: unconformities
+    - task_id: users
+    - task_id: tasks_un
+    - task_id: value
+    - task_id: headerapproach
+    - task_id: valueapproach
+    - task_id: leadershipmetas
+    - task_id: member
+    - task_id: note
+    - task_id: sector
+    - task_id: situation
+    - task_id: feature_flags
+    - task_id: goodday_areas
+    - task_id: goodday_attendance
+    - task_id: calendar_agr
+    - task_id: equipment
+    - task_id: farm
+    - task_id: header_agr
+    - task_id: note_agr
+    - task_id: question_agr
+    - task_id: tasks_agr
+    - task_id: unconformities_agr
+    - task_id: value_agr
+    - task_id: value_equipment_agr
+    - task_id: actionplan
+    - task_id: administration
+    - task_id: aspect
